@@ -1,6 +1,15 @@
-# Tauri + Solid + Vike + Typescript
+# quickrip
 
-This template should help get you started developing with Tauri, Solid and Typescript in Vite.
+A tool for ripping audio from YouTube (more in the future). Using a genuinely great tool called [yt-dlp](https://github.com/yt-dlp/yt-dlp).
+The goal is a very thin wrapper around yt-dlp and be an actually useful GUI for non-programming people (i.e. video editors).
+
+**Benefits**:
+
+- Lightweight and easy to use
+- Safe and Private (I don't store data, even if you download sus videos).
+- No ads (other services have annoying ads, this doesn't)
+- Performant by default (Built with Rust + SolidJS, though it doesn't matter that much)
+- Fastest downloads you'll ever get (It's just your computer your internet, no middle-man server to proxy with, so it's faster).
 
 **Technologies Used**:
 
