@@ -1,5 +1,8 @@
 # quickrip
 
+> [!WARNING]
+> Status: Not Done. Still working on it, but I can download audio no problem atm.
+
 A tool for ripping audio from YouTube (more in the future). Using a genuinely great tool called [yt-dlp](https://github.com/yt-dlp/yt-dlp).
 The goal is a very thin wrapper around yt-dlp and be an actually useful GUI for non-programming people (i.e. video editors).
 
@@ -23,6 +26,7 @@ The goal is a very thin wrapper around yt-dlp and be an actually useful GUI for 
 
 ## Getting Started
 
+- `brew install ffmpeg`
 - `bun install` - installs all dependencies
 - `bun tauri dev` - start the server
 
