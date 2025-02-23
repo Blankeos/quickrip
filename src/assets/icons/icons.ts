@@ -5,3 +5,5 @@
 // - Get your icons from https://icones.js.org/
 // ===========================================================================
 export { default as IconLogo } from "./logo.svg";
+export { default as IconCheckCircle } from "./material-symbols_check-circle-outline-rounded.svg";
+

@@ -1,32 +1,27 @@
+import { useLocalStorage } from '@/hooks/use-local-storage/use-local-storage';
 import '@/styles/app.css';
 
-import { type FlowProps, createSignal } from 'solid-js';
+import { onMount, type FlowProps } from 'solid-js';
+import { Toaster } from 'solid-sonner';
+
+import { navigate } from 'vike/client/router';
 
 export default function RootLayout(props: FlowProps) {
+  const [isOnboardingDone, setIsOnboardingDone] = useLocalStorage<false>({
+    key: 'onboarding-done',
+    defaultValue: false,
+  });
+
+  onMount(() => {
+    if (!isOnboardingDone()) {
+      navigate('/onboarding');
+    }
+  });
   return (
     <div>
-      <nav class="flex items-center justify-center gap-x-5 py-5">
-        <a href="/">Home</a>
-        <span>{' | '}</span>
-        <a href="/dashboard">Dashboard</a>
-        <span>{' | '}</span>
-        <Counter />
-      </nav>
+      <nav class="flex items-center justify-center gap-x-5 py-5"></nav>
       {props.children}
+      <Toaster />
     </div>
-  );
-}
-
-function Counter() {
-  const [count, setCount] = createSignal(0);
-
-  return (
-    <button
-      type="button"
-      onClick={() => setCount((count) => count + 1)}
-      class="text rounded-lg border border-transparent bg-neutral-900 px-2 py-2 text-white shadow-md hover:border-blue-500"
-    >
-      Root Counter {count()}
-    </button>
   );
 }
